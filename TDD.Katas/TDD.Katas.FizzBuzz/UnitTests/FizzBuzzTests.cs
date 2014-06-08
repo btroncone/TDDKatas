@@ -18,70 +18,30 @@ namespace TDD.Katas.FizzBuzz.UnitTests
         }
 
         [Test]
-        public void Will_Print_Fizz_For_3_Buzz_For_5_FizzBuzz_For_Both()
+        public void Will_Print_Numbers_1_To_100_With_Fizz_Buzz_Correctly_Inserted()
         {
-
-            var actualFizzBuzzResult = FizzBuzz.PrintNumbers();
-            Assert.AreEqual(_expected, actualFizzBuzzResult);
+            string fizzBuzzResult = FizzBuzz.NumberPrinter();
+            Assert.AreEqual(_expected, fizzBuzzResult);
+        }
+        [TestCase(3, true)]
+        [TestCase(99, true)]
+        [TestCase(5, false)]
+        [TestCase(100, false)]
+        public void Will_Return_True_If_Divisible_By_Three(int numberToCheck, bool isFizz)
+        {
+            bool fizzTest = FizzBuzz.IsFizz(numberToCheck);
+            Assert.AreEqual(isFizz, fizzTest);
+        }
+        [TestCase(5, true)]
+        [TestCase(100, true)]
+        [TestCase(3, false)]
+        [TestCase(99, false)]
+        public void Will_Return_True_If_Divisible_By_Five(int numberToCheck, bool isBuzz)
+        {
+            bool buzzTest = FizzBuzz.IsBuzz(numberToCheck);
+            Assert.AreEqual(isBuzz, buzzTest);
         }
 
-        [TestCase(1)]
-        [TestCase(100)]
-        [TestCase(50)]
-        public void Is_Number_Between_1_And_100(int numberToCheck)
-        {
-            var actualNumberCheckResult = FizzBuzz.NumberChecker(numberToCheck);
-            Assert.True(actualNumberCheckResult);
-        }
-
-        [TestCase(0)]
-        [TestCase(101)]
-        public void Is_Number_Out_Of_Fizz_Buzz_Bounds(int numberToCheck)
-        {
-            var actualNumberCheckResult = FizzBuzz.NumberChecker(numberToCheck);
-            Assert.False(actualNumberCheckResult);
-        }
-
-        [TestCase(3)]
-        [TestCase(6)]
-        [TestCase(12)]
-        public void Is_Number_Fizz(int numberToCheck)
-        {
-            var actualResult = FizzBuzz.FizzBuzzChecker(numberToCheck).Trim();
-            var expectedResult = "Fizz";
-            Assert.AreEqual(expectedResult, actualResult);
-        }
-
-        [TestCase(5)]
-        [TestCase(10)]
-        [TestCase(20)]
-        public void Is_Number_Buzz(int numberToCheck)
-        {
-            var actualResult = FizzBuzz.FizzBuzzChecker(numberToCheck).Trim();
-            var expectedResult = "Buzz";
-            Assert.AreEqual(expectedResult, actualResult);
-        }
-
-        [TestCase(15)]
-        [TestCase(30)]
-        [TestCase(45)]
-        public void Is_Number_FizzBuzz(int numberToCheck)
-        {
-            var actualResult = FizzBuzz.FizzBuzzChecker(numberToCheck).Trim();
-            var expectedResult = "FizzBuzz";
-            Assert.AreEqual(expectedResult, actualResult);
-        }
-
-        [TestCase]
-        [TestCase(101)]
-        [TestCase(0)]
-        public void Is_Number_Neither_Fizz_Nor_Buzz(int numberToCheck)
-        {
-            var actualResult = FizzBuzz.FizzBuzzChecker(numberToCheck);
-            var expectedResult = String.Empty;
-            Assert.AreEqual(expectedResult,actualResult);
-
-        }
         
     }
 }

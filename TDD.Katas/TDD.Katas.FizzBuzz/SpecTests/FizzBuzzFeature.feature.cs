@@ -66,77 +66,77 @@ namespace TDD.Katas.FizzBuzz.SpecTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Print \"Fizz\" instead of number which is divisible by 3")]
+        [NUnit.Framework.DescriptionAttribute("Return TRUE when the number is divisible by 3")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void PrintFizzInsteadOfNumberWhichIsDivisibleBy3()
+        public virtual void ReturnTRUEWhenTheNumberIsDivisibleBy3()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Print \"Fizz\" instead of number which is divisible by 3", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Return TRUE when the number is divisible by 3", new string[] {
                         "mytag"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("there is a FizzBuzz class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("the number 3 is passed to the FizzBuzzChecker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the number 3 is passed to the IsFizz method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("the number should be replaced by Fizz", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the IsFizz method should return TRUE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Print \"Buzz\" instead of number which is divisible by 5")]
+        [NUnit.Framework.DescriptionAttribute("Return TRUE when the number is divisible by 5")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void PrintBuzzInsteadOfNumberWhichIsDivisibleBy5()
+        public virtual void ReturnTRUEWhenTheNumberIsDivisibleBy5()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Print \"Buzz\" instead of number which is divisible by 5", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Return TRUE when the number is divisible by 5", new string[] {
                         "mytag"});
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 14
  testRunner.Given("there is a FizzBuzz class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.When("the number 5 is passed to the FizzBuzzChecker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the number 5 is passed to the IsBuzz method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.Then("the number should be replaced by Buzz", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the IsBuzz method should return TRUE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Print \"FizzBuzz\" instead of number which is divisible by 3 and 5")]
+        [NUnit.Framework.DescriptionAttribute("Return FALSE when the number is not divisible by 3")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void PrintFizzBuzzInsteadOfNumberWhichIsDivisibleBy3And5()
+        public virtual void ReturnFALSEWhenTheNumberIsNotDivisibleBy3()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Print \"FizzBuzz\" instead of number which is divisible by 3 and 5", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Return FALSE when the number is not divisible by 3", new string[] {
                         "mytag"});
 #line 19
-this.ScenarioSetup(scenarioInfo);
+ this.ScenarioSetup(scenarioInfo);
 #line 20
  testRunner.Given("there is a FizzBuzz class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 21
- testRunner.When("the number 15 is passed to the FizzBuzzChecker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the number 5 is passed to the IsFizz method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.Then("the number should be replaced by FizzBuzz", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the IsFizz method should return FALSE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Print nothing when the number is invalid")]
+        [NUnit.Framework.DescriptionAttribute("Return FALSE when the number is not divisible by 5")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void PrintNothingWhenTheNumberIsInvalid()
+        public virtual void ReturnFALSEWhenTheNumberIsNotDivisibleBy5()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Print nothing when the number is invalid", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Return FALSE when the number is not divisible by 5", new string[] {
                         "mytag"});
 #line 25
-this.ScenarioSetup(scenarioInfo);
+ this.ScenarioSetup(scenarioInfo);
 #line 26
  testRunner.Given("there is a FizzBuzz class", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
- testRunner.When("the number 101 is passed to the FizzBuzzChecker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the number 3 is passed to the IsBuzz method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.Then("the number should be replaced by an empty string", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the IsBuzz method should return FALSE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

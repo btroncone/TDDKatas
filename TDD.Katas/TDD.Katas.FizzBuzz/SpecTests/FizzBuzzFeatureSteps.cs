@@ -7,7 +7,7 @@ namespace TDD.Katas.FizzBuzz.SpecTests
     [Binding]
     public class FizzBuzzFeatureSteps
     {
-        private string actualResult;
+        private bool _expected;
 
         [Given(@"there is a FizzBuzz class")]
         public void GivenThereIsAFizzBuzzClass()
@@ -15,37 +15,40 @@ namespace TDD.Katas.FizzBuzz.SpecTests
             
         }
 
-        [When(@"the number (.*) is passed to the FizzBuzzChecker")]
-        public void WhenTheNumberIsPassedToTheFizzBuzzChecker(int numberToCheck)
+        [When(@"the number (.*) is passed to the IsFizz method")]
+        public void WhenTheNumberIsPassedToTheIsFizzMethod(int numberToCheck)
         {
-            actualResult = FizzBuzz.FizzBuzzChecker(numberToCheck);
+            _expected = FizzBuzz.IsFizz(numberToCheck);
         }
 
-        [Then(@"the number should be replaced by Fizz")]
-        public void ThenTheNumberShouldBeReplacedByFizz()
+        [When(@"the number (.*) is passed to the IsBuzz method")]
+        public void WhenTheNumberIsPassedToTheIsBuzzMethod(int numberToCheck)
         {
-            Assert.AreEqual("Fizz", actualResult.Trim());
+            _expected = FizzBuzz.IsBuzz(numberToCheck);
         }
 
-        [Then(@"the number should be replaced by Buzz")]
-        public void ThenTheNumberShouldBeReplacedByBuzz()
+        [Then(@"the IsFizz method should return TRUE")]
+        public void ThenTheIsFizzMethodShouldReturnTRUE()
         {
-            Assert.AreEqual("Buzz", actualResult.Trim());
+            Assert.AreEqual(true, _expected);
         }
 
-        [Then(@"the number should be replaced by FizzBuzz")]
-        public void ThenTheNumberShouldBeReplacedByFizzBuzz()
+        [Then(@"the IsBuzz method should return TRUE")]
+        public void ThenTheIsBuzzMethodShouldReturnTRUE()
         {
-            Assert.AreEqual("FizzBuzz", actualResult.Trim());
+            Assert.AreEqual(true, _expected);
         }
 
-        [Then(@"the number should be replaced by an empty string")]
-        public void ThenTheNumberShouldBeReplacedByAnEmptyString()
+        [Then(@"the IsFizz method should return FALSE")]
+        public void ThenTheIsFizzMethodShouldReturnFALSE()
         {
-            Assert.AreEqual(string.Empty, actualResult);
+            Assert.AreEqual(false, _expected);
         }
 
-
-
+        [Then(@"the IsBuzz method should return FALSE")]
+        public void ThenTheIsBuzzMethodShouldReturnFALSE()
+        {
+            Assert.AreEqual(false, _expected);
+        }
     }
 }

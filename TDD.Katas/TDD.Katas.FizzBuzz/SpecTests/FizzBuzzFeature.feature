@@ -4,25 +4,25 @@
 	I want to complete the FizzBuzz TDD Kata
 	
 @mytag
-Scenario: Print "Fizz" instead of number which is divisible by 3
+Scenario: Return TRUE when the number is divisible by 3
 	Given there is a FizzBuzz class
-	When  the number 3 is passed to the FizzBuzzChecker
-	Then  the number should be replaced by Fizz
+	When  the number 3 is passed to the IsFizz method
+	Then  the IsFizz method should return TRUE
 
 @mytag
-Scenario: Print "Buzz" instead of number which is divisible by 5
+Scenario: Return TRUE when the number is divisible by 5
 	Given there is a FizzBuzz class
-	When  the number 5 is passed to the FizzBuzzChecker
-	Then  the number should be replaced by Buzz
+	When  the number 5 is passed to the IsBuzz method
+	Then  the IsBuzz method should return TRUE
 
 @mytag
-Scenario: Print "FizzBuzz" instead of number which is divisible by 3 and 5
+	Scenario: Return FALSE when the number is not divisible by 3
 	Given there is a FizzBuzz class
-	When  the number 15 is passed to the FizzBuzzChecker
-	Then  the number should be replaced by FizzBuzz
+	When  the number 5 is passed to the IsFizz method
+	Then  the IsFizz method should return FALSE
 
 @mytag
-Scenario: Print nothing when the number is invalid
+	Scenario: Return FALSE when the number is not divisible by 5
 	Given there is a FizzBuzz class
-	When  the number 101 is passed to the FizzBuzzChecker
-	Then  the number should be replaced by an empty string
+	When  the number 3 is passed to the IsBuzz method
+	Then  the IsBuzz method should return FALSE

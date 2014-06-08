@@ -6,37 +6,26 @@ namespace TDD.Katas.FizzBuzz
     public class FizzBuzz
     {
         
-        public static string PrintNumbers()
+        public static string NumberPrinter()
         {
-            var fizzBuzzResult = new StringBuilder();
+            var fizzBuzzString = new StringBuilder();
+
             for (int i = 1; i <= 100; i++)
             {
-                fizzBuzzResult.Append(FizzBuzzChecker(i));
+                if (IsFizz(i)) fizzBuzzString.Append("Fizz");
+                if (IsBuzz(i)) fizzBuzzString.Append("Buzz");
+                if (!IsBuzz(i) && !IsFizz(i)) fizzBuzzString.Append(i);
+                fizzBuzzString.Append(" ");
             }
-            return fizzBuzzResult.ToString().Trim();
+            return fizzBuzzString.ToString().Trim();
         }
-
-        public static bool NumberChecker(int numberToCheck)
+        public static bool IsFizz(int numberToCheck)
         {
-         
-            return numberToCheck > 0 && numberToCheck <= 100;
+            return numberToCheck % 3 == 0;
         }
-
-        public static string FizzBuzzChecker(int numberToCheck)
+        public static bool IsBuzz(int numberToCheck)
         {
-            if (!NumberChecker(numberToCheck))
-            {
-                return String.Empty;
-            }
-            if (numberToCheck % 15 == 0)
-            {
-                return " FizzBuzz";
-            }
-            if (numberToCheck % 3 == 0)
-            {
-                return " Fizz";
-            }
-            return numberToCheck % 5 == 0 ? " Buzz" : string.Concat(" ",numberToCheck.ToString());
+            return numberToCheck % 5 == 0;
         }
     }
 }
