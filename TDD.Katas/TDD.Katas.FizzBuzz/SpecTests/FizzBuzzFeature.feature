@@ -4,25 +4,20 @@
 	I want to complete the FizzBuzz TDD Kata
 	
 @mytag
-Scenario: Return TRUE when the number is divisible by 3
+Scenario: Return FizzBuzz when number is divisible by 3 & 5
 	Given there is a FizzBuzz class
-	When  the number 3 is passed to the IsFizz method
-	Then  the IsFizz method should return TRUE
+	When  the number 15 is passed to the FizzBuzzPrinter
+	Then  the number should be changed to FizzBuzz
 
 @mytag
-Scenario: Return TRUE when the number is divisible by 5
+Scenario: Return Fizz when number is divisible by 3
 	Given there is a FizzBuzz class
-	When  the number 5 is passed to the IsBuzz method
-	Then  the IsBuzz method should return TRUE
+	When  the number 3 is passed to the FizzBuzzPrinter
+	Then  the number should be changed to Fizz
 
 @mytag
-	Scenario: Return FALSE when the number is not divisible by 3
+	Scenario: Return Buzz when number is divisible by 5
 	Given there is a FizzBuzz class
-	When  the number 5 is passed to the IsFizz method
-	Then  the IsFizz method should return FALSE
+	When  the number 5 is passed into the FizzBuzzPrinter
+	Then  the number should be changed to Buzz
 
-@mytag
-	Scenario: Return FALSE when the number is not divisible by 5
-	Given there is a FizzBuzz class
-	When  the number 3 is passed to the IsBuzz method
-	Then  the IsBuzz method should return FALSE

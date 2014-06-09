@@ -2,53 +2,46 @@
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
-namespace TDD.Katas.FizzBuzz.SpecTests
+namespace TDD.Katas.FizzBuzz
 {
     [Binding]
     public class FizzBuzzFeatureSteps
     {
-        private bool _expected;
-
+        private string _result;
         [Given(@"there is a FizzBuzz class")]
         public void GivenThereIsAFizzBuzzClass()
         {
-            
+
         }
 
-        [When(@"the number (.*) is passed to the IsFizz method")]
-        public void WhenTheNumberIsPassedToTheIsFizzMethod(int numberToCheck)
+        [When(@"the number (.*) is passed to the FizzBuzzPrinter")]
+        public void WhenTheNumberIsPassedToTheFizzBuzzPrinter(int numberToCheck)
         {
-            _expected = FizzBuzz.IsFizz(numberToCheck);
+            _result = FizzBuzz.FizzBuzzPrinter(numberToCheck);
         }
 
-        [When(@"the number (.*) is passed to the IsBuzz method")]
-        public void WhenTheNumberIsPassedToTheIsBuzzMethod(int numberToCheck)
+        [When(@"the number (.*) is passed into the FizzBuzzPrinter")]
+        public void WhenTheNumberIsPassedIntoTheFizzBuzzPrinter(int numberToCheck)
         {
-            _expected = FizzBuzz.IsBuzz(numberToCheck);
+            _result = FizzBuzz.FizzBuzzPrinter(numberToCheck);
         }
 
-        [Then(@"the IsFizz method should return TRUE")]
-        public void ThenTheIsFizzMethodShouldReturnTRUE()
+        [Then(@"the number should be changed to FizzBuzz")]
+        public void ThenTheNumberShouldBeChangedToFizzBuzz()
         {
-            Assert.AreEqual(true, _expected);
+            Assert.AreEqual("FizzBuzz", _result);
         }
 
-        [Then(@"the IsBuzz method should return TRUE")]
-        public void ThenTheIsBuzzMethodShouldReturnTRUE()
+        [Then(@"the number should be changed to Fizz")]
+        public void ThenTheNumberShouldBeChangedToFizz()
         {
-            Assert.AreEqual(true, _expected);
+            Assert.AreEqual("Fizz", _result);
         }
 
-        [Then(@"the IsFizz method should return FALSE")]
-        public void ThenTheIsFizzMethodShouldReturnFALSE()
+        [Then(@"the number should be changed to Buzz")]
+        public void ThenTheNumberShouldBeChangedToBuzz()
         {
-            Assert.AreEqual(false, _expected);
-        }
-
-        [Then(@"the IsBuzz method should return FALSE")]
-        public void ThenTheIsBuzzMethodShouldReturnFALSE()
-        {
-            Assert.AreEqual(false, _expected);
+            Assert.AreEqual("Buzz", _result);
         }
     }
 }
