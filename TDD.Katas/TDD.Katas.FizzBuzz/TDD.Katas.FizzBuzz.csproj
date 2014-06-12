@@ -46,22 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FizzBuzz.cs" />
-    <Compile Include="SpecTests\FizzBuzzFeatureSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpecTests\FizzBuzzFeature.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FizzBuzzFeature.feature</DependentUpon>
-    </Compile>
     <Compile Include="UnitTests\FizzBuzzTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="SpecTests\FizzBuzzFeature.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FizzBuzzFeature.feature.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,44 +7,48 @@ namespace TDD.Katas.FizzBuzz
 {
     public class FizzBuzz
     {
-        public static string GetFizzBuzz()
+        public static string FizzBuzzPrinter(int numberToCheck)
         {
-            var result = PrintFizzBuzzNumbers();
-            return result;
-        }       
-        public static string GetFizzBuzz(int numberToCheck)
-        {
-            IsNumberWithinRange(numberToCheck);
+            IsNumberOutOfRange(numberToCheck);
             var fizzBuzzResult = string.Empty;
-            if (IsNumberFizz(numberToCheck)) fizzBuzzResult += "Fizz";
-            if (IsNumberBuzz(numberToCheck)) fizzBuzzResult += "Buzz";
-            if (string.IsNullOrEmpty(fizzBuzzResult)) fizzBuzzResult += numberToCheck;
+            if (IsFizz(numberToCheck)) fizzBuzzResult += "Fizz";
+            if (IsBuzz(numberToCheck)) fizzBuzzResult += "Buzz";
+            if (IsNeitherFizzNorBuzz(fizzBuzzResult)) fizzBuzzResult += numberToCheck;
             return fizzBuzzResult;
         }
-        private static string PrintFizzBuzzNumbers()
+
+        public static string PrintNumbers()
         {
-            var result = string.Empty;
+            var fizzBuzz = string.Empty;
             for (int i = 1; i <= 100; i++)
             {
-                result += GetFizzBuzz(i) + " ";
+                fizzBuzz += FizzBuzzPrinter(i) + " ";
             }
-            return result.Trim();
+            return fizzBuzz.Trim();
         }
-        private static bool IsNumberFizz(int numberToCheck)
+
+        private static bool IsNeitherFizzNorBuzz(string fizzBuzzResult)
+        {
+            return string.IsNullOrEmpty(fizzBuzzResult);
+        }
+
+        private static bool IsFizz(int numberToCheck)
         {
             return numberToCheck % 3 == 0;
         }
-        private static bool IsNumberBuzz(int numberToCheck)
+
+        private static bool IsBuzz(int numberToCheck)
         {
             return numberToCheck % 5 == 0;
         }
 
-        private static void IsNumberWithinRange(int numberToCheck)
+        private static void IsNumberOutOfRange(int numberToCheck)
         {
-            if (numberToCheck < 1 || numberToCheck > 100)
+            if (numberToCheck <= 0 || numberToCheck > 100)
             {
                 throw new ArgumentOutOfRangeException();
             }
+             
         }
     }
 }
